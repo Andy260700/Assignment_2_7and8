@@ -13,9 +13,8 @@ public class View {
         jTabbedPane.add("Add Employee", form);
         jTabbedPane.add("Search Employee", search);
         frame.setContentPane(jTabbedPane);
-        frame.setSize(400,200);
+        frame.setSize(400,260);
         frame.setVisible(true);
-
 
     }
 }

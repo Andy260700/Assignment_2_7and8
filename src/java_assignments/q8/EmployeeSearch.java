@@ -30,17 +30,22 @@ public class EmployeeSearch extends JPanel {
         layout.setAutoCreateGaps(true);
 
 
-        layout.setHorizontalGroup(layout.createSequentialGroup()
-                .addGroup(layout
-                        .createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(employeeIdLabel)
-                        .addComponent(search)
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout
+                                        .createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(employeeIdLabel)
+                                        .addComponent(search)
 //                        .addComponent(grade)
-                )
-                .addGroup(layout
-                        .createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(employeeId)
-                        .addComponent(error)
+                        )
+                        .addGroup(layout
+                                .createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addComponent(employeeId)
+                                .addComponent(error)
+
+                        ))
+
+                .addGroup(layout.createSequentialGroup()
                         .addComponent(output)
                 )
         );
