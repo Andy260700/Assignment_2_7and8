@@ -7,7 +7,19 @@ enum Grade{
     A,B,C
 };
 enum Department{
-    HR, MARKETING, SALES, IT
+    HR
+    , MARKETING{
+        @Override
+        public String toString() {
+            return "Marketing";
+        }
+    }, SALES{
+        @Override
+        public String toString() {
+            return "Sales";
+        }
+    }, IT
+
 };
 public class Employee implements Serializable{
     private static final long serialVersionUID = 4L;

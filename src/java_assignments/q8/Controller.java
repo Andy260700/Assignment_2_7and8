@@ -2,7 +2,9 @@ package java_assignments.q8;
 
 import javax.swing.*;
 import javax.swing.text.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.HashMap;
 
 public class Controller {
     private Model model;
@@ -54,11 +56,25 @@ public class Controller {
             try {
                 Employee employee = model.getEmployeeCollection().findEmployee(empId);
                 StyledDocument doc  = employeeSearchPanel.getOutput().getStyledDocument();
-                MutableAttributeSet attributeSet = new SimpleAttributeSet();
-                StyleConstants.setItalic(attributeSet, true);
+                MutableAttributeSet attributeSet1 = new SimpleAttributeSet();
+                StyleConstants.setItalic(attributeSet1, true);
+                StyleConstants.setForeground(attributeSet1, Color.DARK_GRAY);
+                MutableAttributeSet attributeSet2 = new SimpleAttributeSet();
+                StyleConstants.setBold(attributeSet2, true);
+                StyleConstants.setForeground(attributeSet2, Color.BLUE);
+                StyleConstants.setFontFamily(attributeSet2, "Monospaced");
                 try {
+                    HashMap<String, String > stringMatching = new HashMap<>();
+                    stringMatching.put("\nEmployee Id : ",employee.getEmployeeId());
+                    stringMatching.put("\nName : ", employee.getEmployeeName());
+                    stringMatching.put("\nDepartment : ", employee.getDepartment().toString());
+                    stringMatching.put("\nGrade : ", employee.getGrade().toString());
+                    stringMatching.put("\nBasic Salary : ", String.format("%6.2f",employee.getBasicSalary()));
                     doc.remove(0, doc.getLength());
-                    doc.insertString(0, employee.toString(), attributeSet);
+                    for(var ds : stringMatching.entrySet()){
+                        doc.insertString(doc.getLength(), ds.getKey() , attributeSet1);
+                        doc.insertString(doc.getLength(), ds.getValue() , attributeSet2);
+                    }
                 }catch (BadLocationException e){
                     e.printStackTrace();
                 }

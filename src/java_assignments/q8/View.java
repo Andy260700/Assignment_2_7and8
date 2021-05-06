@@ -11,6 +11,7 @@ public class View {
         tabbedPane = new JTabbedPane();
 
         frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         tabbedPane.add("Add Employee", form);
         tabbedPane.add("Search Employee", search);
         frame.setContentPane(tabbedPane);

@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Model {
     private PersistentStorage employeeCollection;
-    private boolean isSaved = true;
+
     Model(){
         try (FileInputStream fileIn = new FileInputStream("./files/q8.ser")) {
             try (ObjectInputStream objIn = new ObjectInputStream(fileIn)) {
@@ -31,13 +31,6 @@ public class Model {
         }
     }
 
-    public boolean getSaved(){
-        return isSaved;
-    }
-
-    public void setSaved(boolean saved) {
-        isSaved = saved;
-    }
 
     public PersistentStorage getEmployeeCollection() {
         return employeeCollection;
