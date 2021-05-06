@@ -83,4 +83,41 @@ public class EmployeeForm extends JPanel {
         this.setLayout(layout);
     }
 
+    public JButton getSubmit() {
+        return submit;
+    }
+    public JRadioButton getjRadioButtonA() {
+        return jRadioButtonA;
+    }
+
+    public JRadioButton getjRadioButtonB() {
+        return jRadioButtonB;
+    }
+
+    public JRadioButton getjRadioButtonC() {
+        return jRadioButtonC;
+    }
+
+    public JComboBox<Department> getDepartmentList() {
+        return departmentList;
+    }
+
+    public JLabel getDepartment() {
+        return department;
+    }
+
+    public JLabel getError() {
+        return error;
+    }
+
+    public JLabel getNameLabel() {
+        return nameLabel;
+    }
+
+    public JLabel getGrade() {
+        return grade;
+    }
+    public JTextField getname(){
+        return name;
+    }
 }

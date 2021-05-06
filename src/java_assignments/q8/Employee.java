@@ -37,6 +37,23 @@ public class Employee implements Serializable{
             }
         }
     }
+    public static void setIdGenerator(int a){
+        idGenerator = a;
+    }
+    public static int getIdGenerator(){
+        return idGenerator;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("|| Employee ||").append("\n\n");
+        sb.append(" Employee Id = ").append(employeeId).append('\n');
+        sb.append(" Employee Name = ").append(employeeName).append('\n');
+        sb.append(" Department = ").append(department).append('\n');
+        sb.append(" Basic Salary = ").append(basicSalary).append('\n');
+        sb.append(" Grade = ").append(grade).append('\n');
+        return sb.toString();
+    }
 
     public Department getDepartment() {
         return department;

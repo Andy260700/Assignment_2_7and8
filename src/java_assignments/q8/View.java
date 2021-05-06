@@ -3,18 +3,26 @@ package java_assignments.q8;
 import javax.swing.*;
 
 public class View {
-    JFrame frame;
+    private JFrame frame;
+    private JTabbedPane tabbedPane;
     View(){
         EmployeeForm form = new EmployeeForm();
         EmployeeSearch search = new EmployeeSearch();
-        JTabbedPane jTabbedPane = new JTabbedPane();
+        tabbedPane = new JTabbedPane();
 
         frame = new JFrame();
-        jTabbedPane.add("Add Employee", form);
-        jTabbedPane.add("Search Employee", search);
-        frame.setContentPane(jTabbedPane);
+        tabbedPane.add("Add Employee", form);
+        tabbedPane.add("Search Employee", search);
+        frame.setContentPane(tabbedPane);
         frame.setSize(400,260);
         frame.setVisible(true);
+    }
 
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public JTabbedPane getTabbedPane() {
+        return tabbedPane;
     }
 }

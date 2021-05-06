@@ -13,16 +13,8 @@ public class EmployeeSearch extends JPanel {
         employeeIdLabel = new JLabel("Employee id : ");
         employeeIdLabel.setLabelFor(employeeId);
         employeeId = new JTextField("enter id");
-        error = new JLabel("this is error");
+        error = new JLabel("");
         output = new JTextPane();
-        StyledDocument doc = output.getStyledDocument();
-        MutableAttributeSet attributeSet = new SimpleAttributeSet();
-        StyleConstants.setItalic(attributeSet, true);
-        try {
-            doc.insertString(0, "9\n8\n9\nyfctdx", attributeSet);
-        }catch (BadLocationException e){
-            e.printStackTrace();
-        }
         search = new JButton("Search");
 
         GroupLayout layout = new GroupLayout(this);
@@ -66,4 +58,24 @@ public class EmployeeSearch extends JPanel {
 
         this.setLayout(layout);
     }
+    public JButton getSearch() {
+        return search;
+    }
+
+    public JLabel getError() {
+        return error;
+    }
+
+    public JTextField getEmployeeId() {
+        return employeeId;
+    }
+
+    public JLabel getEmployeeIdLabel() {
+        return employeeIdLabel;
+    }
+
+    public JTextPane getOutput() {
+        return output;
+    }
+
 }
